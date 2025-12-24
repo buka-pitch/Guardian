@@ -1,0 +1,75 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  padding: 1rem;
+}
+
+.stat-card {
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #374151;
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f3f4f6;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.icon.cpu {
+  color: #8884d8;
+}
+.icon.memory {
+  color: #82ca9d;
+}
+.icon.disk {
+  color: #60a5fa;
+}
+.icon.security {
+  color: #f59e0b;
+}
+
+.chart-container {
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #374151;
+  grid-column: span 2;
+}
+
+.chart-container.wide {
+  grid-column: span 2;
+}
+
+.chart-wrapper {
+  margin-top: 1rem;
+}
+
+h3 {
+  margin: 0;
+  color: #e5e7eb;
+  font-size: 1.125rem;
+}
+
+.text-green {
+  color: #34d399;
+}

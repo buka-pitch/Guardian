@@ -1,0 +1,44 @@
+[package]
+name = "guardian-daemon"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "guardian-daemon"
+path = "src/main.rs"
+
+[dependencies]
+guardian-common = { path = "../guardian-common" }
+
+# Async runtime
+tokio.workspace = true
+
+# Logging
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+# Serialization
+serde.workspace = true
+serde_json.workspace = true
+
+# System monitoring
+sysinfo.workspace = true
+notify.workspace = true
+
+# Error handling
+anyhow.workspace = true
+thiserror.workspace = true
+
+# Utilities
+chrono.workspace = true
+uuid.workspace = true
+hostname = "0.3"
+yara-x = "0.4"
+
+[target.'cfg(windows)'.dependencies]
+windows-service = "0.6"
+
+[target.'cfg(unix)'.dependencies]
+nix = { version = "0.27", features = ["signal"] }
