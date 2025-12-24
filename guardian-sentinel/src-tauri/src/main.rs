@@ -4,6 +4,7 @@
 use guardian_common::LogEvent;
 use guardian_sentinel_lib::AppState;
 use std::sync::Arc;
+use tokio::sync::Mutex;
 use tauri::{Emitter, Manager};
 use tracing::{error, info};
 #[allow(unused_imports)]
@@ -83,7 +84,7 @@ async fn spawn_daemon(
         .or_else(|_| {
             // Fallback for dev mode if sidecar isn't configured in tauri.conf.json
             // We'll run the binary directly relative to the project root
-             Ok(tauri_plugin_shell::ShellExt::shell(&app)
+             Ok::<_, tauri_plugin_shell::Error>(tauri_plugin_shell::ShellExt::shell(&app)
                 .command("../../target/debug/guardian-daemon"))
         })?;
 

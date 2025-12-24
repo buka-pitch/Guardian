@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEvents } from "./hooks/useEvents";
 import { Sidebar } from "./components/layout/Sidebar";
-import { StatsGrid } from "./components/dashboard/StatsGrid";
+
 import { MonitoringDashboard } from "./components/dashboard/MonitoringDashboard";
 import { EventsTable } from "./components/events/EventsTable";
 import { SearchBar } from "./components/common/SearchBar";
@@ -13,8 +13,7 @@ import "./components/common/Pagination.css";
 import "./App.css";
 
 function App() {
-  const { events, stats, query, setQuery, page, setPage, limit, total } =
-    useEvents();
+  const { events, query, setQuery, page, setPage, limit, total } = useEvents();
   const [currentView, setView] = useState("dashboard");
 
   return (
